@@ -1,0 +1,32 @@
+<img class="logo" alt="TodoList Logo" src="../../../assets/todoList.png">
+<div class="add-container">
+    <input type="text" class="todo-input" placeholder="Ajouter une tâche" [(ngModel)]="newTodo" (keyup.enter)="addTodo()">
+    <button class="add-button" (click)="addTodo()">Ajouter</button>
+</div>
+
+
+<div class="todo-item" *ngFor="let todo of listTodos">
+    <div class="todo-item-left">
+        <input type="checkbox" [(ngModel)]="todo.completed">
+        <!-- ngClass -->
+        <div class="todo-item-label" [ngClass]="{ 'completed' : todo.completed }">
+            <p>{{todo.title}}</p>
+        </div>
+    </div>
+
+    <div class="remove-item" (click)="deleteTodo(todo.id)">
+        &times;
+    </div>
+</div>
+
+<div class="extra-container">
+    <div> <label> <input type="checkbox" (change)="checkAll($event)">Cocher les tâches</label></div>
+    <div> {{ todosRemaining() }} tâches en cours</div>
+</div>
+
+<div class="extra-container">
+    <!-- ngIf-->
+    <div *ngIf="atLeastOneTodoCompleted()">
+        <button (click)="clearCompleted()">Supprimer les tâches réalisées!</button>
+    </div>
+</div>

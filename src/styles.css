@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+    
+  body {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+    background: #D9A50B;
+    margin-top: 60px;
+    font-size: 24px;
+  }
+  
+  .logo {
+    display: block;
+    margin: 20px auto;
+    height: 14vh;
+  }
+
+  h1 {
+    display: none;
+  }
